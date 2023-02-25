@@ -1,0 +1,14 @@
+stages:
+  - job_execution_job1
+  - job_execution_job2
+
+job_1:
+  stage: job_execution_job1
+  script:
+    - echo "Running job 1"
+
+job_2:
+  stage: job_execution_job2:
+  needs: ["job_1"]
+  script:
+    - echo "running job 2"
